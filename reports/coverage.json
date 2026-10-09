@@ -1,0 +1,16 @@
+{
+  "buyer": {
+    "glids": 51536,
+    "events_p50": 1,
+    "events_p95": 7,
+    "with_>=2_channels_%": 12.8,
+    "sparse_(<3_events)_%": 81.4
+  },
+  "seller": {
+    "glids": 5000,
+    "events_p50": 19,
+    "events_p95": 199,
+    "with_>=2_channels_%": 93.4,
+    "sparse_(<3_events)_%": 6.2
+  }
+}

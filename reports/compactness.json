@@ -1,0 +1,31 @@
+{
+  "seller": {
+    "files": 5000,
+    "words_p50": 170,
+    "words_p95": 287,
+    "words_max": 354,
+    "tokens_est_p50": 329,
+    "tokens_est_p95": 556,
+    "within_budget_%": 100.0
+  },
+  "buyer": {
+    "files": 3278,
+    "words_p50": 58,
+    "words_p95": 144,
+    "words_max": 286,
+    "tokens_est_p50": 135,
+    "tokens_est_p95": 310,
+    "within_budget_%": 100.0
+  },
+  "structure": {
+    "checked": 8278,
+    "invalid": 0,
+    "examples": [],
+    "valid_%": 100.0
+  },
+  "budget": {
+    "max_words": 320,
+    "max_chars": 2600,
+    "note": "tokens_est = chars/3.2 (romanised Hindi tokenises worse than English); measure with the real tokenizer when you pick the model."
+  }
+}

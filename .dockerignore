@@ -1,0 +1,10 @@
+.venv*
+data
+var
+out
+samples
+reports
+tests
+__pycache__
+.env
+*.zip

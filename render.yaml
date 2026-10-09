@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: gcx-context
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: GCX_HOOK_TOKEN
+        sync: false        # set a long random string in the Render dashboard
+      - key: SARVAM_API_KEY
+        sync: false        # optional: only needed for chat/WhatsApp replies

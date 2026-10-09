@@ -1,0 +1,26 @@
+{
+  "bot_calls_total": 9657,
+  "bot_calls_with_transcript": 455,
+  "bot_turns_asking": {
+    "identity": 394,
+    "category": 1,
+    "location": 0
+  },
+  "of_which_file_already_knew": {
+    "identity": 394,
+    "category": 1,
+    "location": 0
+  },
+  "calls_with_any_identity_or_fact_check_%": 78.9,
+  "calls_with_pure_reask_of_category_or_location": 1,
+  "cold_start_%": 76.0,
+  "cold_start_definition": "share of transcribed bot calls whose first bot turn is the generic 'kya aap <company> se bol rahe hain?' check, i.e. the call starts from nothing",
+  "examples_non_identity": [
+    {
+      "glid": "112311139",
+      "asked": "Ji, vaise aap kin products mein deal karte hain? Matlab kya bechte hain aap IndiaMART par?",
+      "file_has": "category"
+    }
+  ],
+  "note": "Identity checks ('kya aap X se bol rahe hain?') are partly a safety step (wrong-person guard); with the file they become a confirmation ('Hello X, ...'), not a question. Category/location asks are pure re-asks."
+}

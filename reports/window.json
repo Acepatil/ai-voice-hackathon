@@ -1,0 +1,100 @@
+{
+  "n_bot_calls": 9657,
+  "table": [
+    {
+      "window_days": 3,
+      "calls_with_any_prior_activity_%": 13.9,
+      "calls_with_actionable_item_%": 8.4,
+      "marginal_actionable_gain_pp": 8.4
+    },
+    {
+      "window_days": 7,
+      "calls_with_any_prior_activity_%": 20.1,
+      "calls_with_actionable_item_%": 12.7,
+      "marginal_actionable_gain_pp": 4.3
+    },
+    {
+      "window_days": 14,
+      "calls_with_any_prior_activity_%": 27.2,
+      "calls_with_actionable_item_%": 18.1,
+      "marginal_actionable_gain_pp": 5.4
+    },
+    {
+      "window_days": 21,
+      "calls_with_any_prior_activity_%": 32.5,
+      "calls_with_actionable_item_%": 22.4,
+      "marginal_actionable_gain_pp": 4.3
+    },
+    {
+      "window_days": 30,
+      "calls_with_any_prior_activity_%": 36.9,
+      "calls_with_actionable_item_%": 26.0,
+      "marginal_actionable_gain_pp": 3.6
+    },
+    {
+      "window_days": 45,
+      "calls_with_any_prior_activity_%": 43.7,
+      "calls_with_actionable_item_%": 31.4,
+      "marginal_actionable_gain_pp": 5.4
+    },
+    {
+      "window_days": 60,
+      "calls_with_any_prior_activity_%": 48.6,
+      "calls_with_actionable_item_%": 35.6,
+      "marginal_actionable_gain_pp": 4.2
+    },
+    {
+      "window_days": 90,
+      "calls_with_any_prior_activity_%": 55.9,
+      "calls_with_actionable_item_%": 42.1,
+      "marginal_actionable_gain_pp": 6.5
+    }
+  ],
+  "outcome_by_age_of_latest_actionable_item": [
+    {
+      "age_of_latest_actionable_item": "no actionable item in data",
+      "calls": 5011,
+      "meeting_fixed_%": 13.7,
+      "not_interested_%": 40.0
+    },
+    {
+      "age_of_latest_actionable_item": "0-7d",
+      "calls": 1231,
+      "meeting_fixed_%": 7.4,
+      "not_interested_%": 43.9
+    },
+    {
+      "age_of_latest_actionable_item": "8-14d",
+      "calls": 518,
+      "meeting_fixed_%": 7.5,
+      "not_interested_%": 48.5
+    },
+    {
+      "age_of_latest_actionable_item": "15-30d",
+      "calls": 766,
+      "meeting_fixed_%": 8.2,
+      "not_interested_%": 47.3
+    },
+    {
+      "age_of_latest_actionable_item": "31-60d",
+      "calls": 925,
+      "meeting_fixed_%": 9.9,
+      "not_interested_%": 42.5
+    },
+    {
+      "age_of_latest_actionable_item": "61-90d",
+      "calls": 624,
+      "meeting_fixed_%": 8.2,
+      "not_interested_%": 45.5
+    },
+    {
+      "age_of_latest_actionable_item": ">90d",
+      "calls": 582,
+      "meeting_fixed_%": 9.3,
+      "not_interested_%": 40.7
+    }
+  ],
+  "decision": "recent=7d listed line-by-line; lookback=30d summarised; open items counted to 60d. Chosen by judgement from this table: coverage of actionable items grows ~linearly (no knee), history shows no outcome gradient by age (the old bot never used the info), so older items cost one summary line instead of being dropped.",
+  "median_lag_days_any": 19.1,
+  "note": "Actionable = enquiry with no seller reply, or buyer call not connected. Recent window (events listed one-by-one) is set separately: the 7-day figure is where 'any prior activity' coverage is still steep, so fresh items get full lines; older ones are summarised."
+}

@@ -1,0 +1,33 @@
+paths:
+  seller_dir: ./data/seller            # folder with the gc_*.csv files (unzipped seller dataset)
+  buyer_csv: ./data/buyer_getcontext.csv   # getContext API log export (buyer side)
+  db: ./var/gcx.sqlite
+  out: ./out
+
+# "data_end": treat newest event in the DB as "now" (use for the historical dataset)
+# "now":      wall clock, IST (use in production)
+# ISO string: pin a date (tests)
+as_of: data_end
+
+window:
+  recent_days: 7        # events listed individually
+  lookback_days: 30     # events summarised (counts + digest); older events dropped except durable facts
+  open_item_days: 60    # unreplied enquiries older than lookback are still counted (one line)
+  interest_days: 90     # buyer interests / searched categories
+  durable: [do_not_call, last_bot_outcome, kyc, language]
+
+budget:
+  max_words: 320        # hard cap per file; lowest-priority lines are dropped first
+  max_chars: 2600
+
+llm:
+  enabled: auto         # auto = use Sarvam when SARVAM_API_KEY is set; false = never
+  model: sarvam-105b
+  chat_model: sarvam-105b
+  stt_model: "saaras:v4"
+  tts_model: "bulbul:v3"
+  tts_speaker: shubh
+  timeout_s: 20
+
+ab:
+  holdout_pct: 0        # % of GLIDs that get a generic (non-personalised) opening, to measure lift

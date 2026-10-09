@@ -1,0 +1,22 @@
+{
+  "observational_history": [
+    {
+      "had_actionable_item_14d": false,
+      "calls": 7908,
+      "meeting_fixed_%": 12.0,
+      "not_interested_%": 41.5,
+      "talked_%": 58.5,
+      "avg_duration_s": 36.9
+    },
+    {
+      "had_actionable_item_14d": true,
+      "calls": 1749,
+      "meeting_fixed_%": 7.4,
+      "not_interested_%": 45.3,
+      "talked_%": 54.7,
+      "avg_duration_s": 31.9
+    }
+  ],
+  "ab_log": [],
+  "how_to_measure_true_lift": "Set ab.holdout_pct (e.g. 10) in config.yaml. The on-start hook then serves a generic opening to that share of GLIDs (hash-assigned, stable) and logs arm + on-end disposition; rerun `python -m gcx eval lift` after ~1 week of calls and compare meeting-fixed / talk-time between arm=personalised and arm=control."
+}

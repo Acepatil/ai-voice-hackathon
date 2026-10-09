@@ -1,0 +1,20 @@
+{
+  "event_to_file_ms": {
+    "n": 300,
+    "p50": 33.38,
+    "p95": 47.1,
+    "max": 193.49
+  },
+  "read_your_write_ok": "50/50",
+  "batch_refresh": {
+    "files": 300,
+    "seconds": 1.0,
+    "files_per_sec": 299.4
+  },
+  "content_staleness_days": {
+    "note": "age of the newest event inside each file vs the as_of time; this is a property of the data, not the pipeline",
+    "p50": 12.92,
+    "p95": 101.95
+  },
+  "mode": "sync-on-write (hooks) + batch drain; no polling interval, so worst-case delay = one render"
+}
