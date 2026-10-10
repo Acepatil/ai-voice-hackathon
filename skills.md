@@ -1,8 +1,17 @@
 # skills.md — build journey and tools used
 
 **Project:** VANI SAATH - Seller And buyer Across Touchpoints, Held together
-**Team:** Dragon Slayers · **Members:** Sourabh Patil, Srishti, Simran Varshney· **Problem chosen:** 2 of 6 — *Global Context: Memory Across Channels*
+
 **Org-Id** 01a11058-8b0c-77c7-9674-390686a508c7
+
+**Team:** Dragon Slayers · 
+
+**Members:** Sourabh Patil, Srishti, Simran Varshney· 
+
+**Problem chosen:** 2 of 6 — *Global Context: Memory Across Channels*
+
+**Org-Id** 01a11058-8b0c-77c7-9674-390686a508c7
+
 **Sarvam agent ID / live link:** IM-Voice-As-4fb34110-7d3d
 
 ## The challenge in one line
@@ -13,6 +22,7 @@ Make the voice bot already know the buyer or seller, and their past history, bef
    The buyer file turned out to be a *log of the getContext API*, not a table: each row holds a JSON response with activity, KYC, tickets and last WhatsApp chats.
    Findings that shaped the design: the 271 buyer GLIDs never overlap the seller dataset; the buyer export is truncated at ~32k characters for the busiest users (26 rows recovered with regexes, 47 unusable);
    message text contains phone numbers although the dictionary says they are removed (redacted at ingest, with a test).
+
 2. **One event model for every channel.** Everything becomes `(glid, role, ts, channel, type, short summary, data)` in SQLite. A GLID can be both seller and buyer; the WhatsApp bot's requirement flow (`Msite_BL*`) marks a seller as acting as a buyer.
 3. **Facts, then text.** Deterministic code computes open items (unreplied enquiries, missed buyer calls, call-later, meeting fixed, unfinished WhatsApp steps), flags (do-not-call, asked-if-bot, frustration) and the language (voted from what the person wrote or said).
    The LLM is optional and only compresses long histories — never on the critical path.
@@ -49,5 +59,4 @@ the lift of the personalised opening needs live A/B (harness built; `ab.holdout_
 Sarvam's hook request/response format is not in the public docs, so the live hooks were not verified end to end. The base agent runs from variables, not from the hooks. No phone→GLID map in the data.
 Buyer files are sparse for ~81% of buyers. Lift is unmeasured until live calls. The hosted demo database holds only ~20 demo GLIDs.
 
-## Reproduce
-`pip install -r requirements.txt` → copy `.env.example` to `.env` (add `SARVAM_API_KEY`) → data in `data/` → `python -m gcx ingest && python -m gcx build --cohort` → `python -m gcx export-campaign --n 20` → `python -m gcx serve`. See README.md.
+
