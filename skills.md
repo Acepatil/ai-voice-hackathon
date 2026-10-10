@@ -10,8 +10,6 @@
 
 **Problem chosen:** 2 of 6 — *Global Context: Memory Across Channels*
 
-**Org-Id** 01a11058-8b0c-77c7-9674-390686a508c7
-
 **Sarvam agent ID / live link:** IM-Voice-As-4fb34110-7d3d
 
 ## The challenge in one line
